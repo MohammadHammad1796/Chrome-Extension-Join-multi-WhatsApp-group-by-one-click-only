@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Join whatsapp groups",
+  "description": "Join whatsapp groups by past links",
+  "icons": {
+    "128": "/images/icon.png",
+    "24": "/images/icon.png",
+    "32": "/images/icon.png",
+    "48": "/images/icon.png",
+    "64": "/images/icon.png"
+  },
+  "version": "1.0",
+  "author": "Mohammad Hammad",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Whatsapp"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "storage",
+    "https://web.whatsapp.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.whatsapp.com/*"
+      ],
+      "js": [
+        "/javascript/content.js"
+      ]
+    }
+  ]
+}
